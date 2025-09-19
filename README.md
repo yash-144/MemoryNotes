@@ -22,11 +22,9 @@ The UI is sleek and focuses on a distraction-free writing experience with a mode
 
 Here is a preview of the application's interface.
 
-*(**Note:** You should replace this placeholder with an actual screenshot of your app!)*
-
 | Modern Teal Theme |
 | :---: |
-| ** |
+| <img src="https://github.com/user-attachments/assets/0e55d677-4a1b-48b8-9970-808c7a4f5e82" alt="Memory Notes App Screenshot" width="400"/> |
 
 ---
 
