@@ -11,6 +11,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
@@ -61,15 +62,35 @@ class MainActivity : ComponentActivity() {
                             .padding(innerPadding)
                             .padding(16.dp)
                     ) {
-                        Row (modifier = Modifier
-                            .fillMaxWidth(),
-                            horizontalArrangement = Arrangement.spacedBy(16.dp)) {
-                            Box(modifier = Modifier.weight(1f)) {
-                                Text("Memory Notes", modifier = Modifier.padding(start = 20.dp), color = Color.White, fontSize = 22.sp)
-                            }
-                            Row ( modifier = Modifier.weight(1f).padding(top = 12.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                                Text(if (unSavedChanges) "Unsaved Changes" else "Changes Saved", modifier = Modifier.padding(start = 24.dp, top = 8.dp), color = Color.LightGray, fontSize = 12.sp)
-                                Text("${textState.value.length}", modifier = Modifier.padding(start = 20.dp, top = 8.dp), color = Color.LightGray, fontSize = 12.sp)
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(horizontal = 16.dp, vertical = 8.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            // Left: Title
+                            Text(
+                                "Memory Notes",
+                                color = Color.White,
+                                fontSize = 22.sp,
+                                modifier = Modifier.weight(1f) // takes remaining space
+                            )
+
+                            // Right: Status + Count
+                            Row(
+                                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Text(
+                                    if (unSavedChanges) "Unsaved Changes" else "Changes Saved",
+                                    color = Color.LightGray,
+                                    fontSize = 12.sp
+                                )
+                                Text(
+                                    "${textState.value.length}",
+                                    color = Color.LightGray,
+                                    fontSize = 12.sp
+                                )
                             }
                         }
                         TextField(
