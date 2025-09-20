@@ -154,7 +154,9 @@ class MainActivity : ComponentActivity() {
                                 shape = RoundedCornerShape(12.dp),
                                 colors = ButtonDefaults.buttonColors(
                                     containerColor = primaryActionColor,
-                                    contentColor = darkBlue
+                                    contentColor = darkBlue,
+                                    disabledContainerColor = Color.Gray.copy(alpha = 0.3f),
+                                    disabledContentColor = Color.White.copy(alpha = 0.5f)
                                 ),
                                 enabled = unSavedChanges && textState.value.isNotBlank()
                             ) {
@@ -166,7 +168,9 @@ class MainActivity : ComponentActivity() {
                                 shape = RoundedCornerShape(12.dp),
                                 colors = ButtonDefaults.buttonColors(
                                     containerColor = destructiveActionColor,
-                                    contentColor = Color.White
+                                    contentColor = Color.White,
+                                    disabledContainerColor = Color.Gray.copy(alpha = 0.3f),
+                                    disabledContentColor = Color.White.copy(alpha = 0.5f)
                                 ),
                                 enabled = textState.value.isNotEmpty()
                             ) {
