@@ -100,8 +100,9 @@ class MainActivity : ComponentActivity() {
 
                 if (noteIndex != -1) {
                     notes[noteIndex] =
-                        notes[noteIndex].copy(body = textState.value, title = titleState.value)
+                        notes[noteIndex].copy(body = textState.value, title = titleState.value, date = System.currentTimeMillis())
                     saveNotes(file, notes)
+
                     savedText.value = textState.value
                     savedTitle.value = titleState.value
                     Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show()
