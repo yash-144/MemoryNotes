@@ -24,12 +24,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.pixbuilds.memorynotes.ui.theme.MemoryNotesTheme
 import java.io.File
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class MainActivity : ComponentActivity() {
     private val fileName: String = "notes.json"
@@ -38,7 +42,8 @@ class MainActivity : ComponentActivity() {
     data class Note(
         val id: Int,
         val title: String,
-        val body: String
+        val body: String,
+        val date: Long = System.currentTimeMillis()
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,6 +56,12 @@ class MainActivity : ComponentActivity() {
             val destructiveActionColor = Color(0xFFE57373)
             val primaryTextColor = Color(0xFFEEEEEE)
             val secondaryTextColor = Color(0xFFAAAAAA)
+
+            fun dateFormat(timestamp: Long): String {
+                val pattern = "MMM d, yyyy, h:mm a"
+                val simpleDateFormat = SimpleDateFormat(pattern, Locale.getDefault())
+                return simpleDateFormat.format(Date(timestamp))
+            }
 
             fun loadNotes(file: File): List<Note> {
                 if (!file.exists() || file.readText().isBlank()) {
@@ -89,8 +100,9 @@ class MainActivity : ComponentActivity() {
 
                 if (noteIndex != -1) {
                     notes[noteIndex] =
-                        notes[noteIndex].copy(body = textState.value, title = titleState.value)
+                        notes[noteIndex].copy(body = textState.value, title = titleState.value, date = System.currentTimeMillis())
                     saveNotes(file, notes)
+
                     savedText.value = textState.value
                     savedTitle.value = titleState.value
                     Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show()
@@ -270,7 +282,26 @@ class MainActivity : ComponentActivity() {
                                                         activeNoteId.intValue = note.id
                                                     }
                                             ) {
-                                                Text(text = note.title, color = primaryTextColor)
+                                                Column {
+                                                    Text(
+                                                        text = note.title,
+                                                        color = primaryTextColor,
+                                                        fontWeight = FontWeight.Bold
+                                                    )
+                                                    Text(
+                                                        text = note.body,
+                                                        color = secondaryTextColor,
+                                                        modifier = Modifier.padding(top = 8.dp),
+                                                        maxLines = 2,
+                                                        overflow = TextOverflow.Ellipsis
+                                                    )
+                                                    Text(
+                                                        text = dateFormat(note.date),
+                                                        color = secondaryTextColor,
+                                                        fontSize = 12.sp,
+                                                        modifier = Modifier.padding(top = 8.dp)
+                                                    )
+                                                }
                                             }
                                         }
                                         item {
@@ -279,7 +310,6 @@ class MainActivity : ComponentActivity() {
                                                     .fillMaxWidth()
                                                     .clip(RoundedCornerShape(12.dp))
                                                     .background(MaterialTheme.colorScheme.secondaryContainer)
-                                                    .padding(16.dp)
                                                     .clickable {
                                                         val newNote = Note(
                                                             System
@@ -293,7 +323,7 @@ class MainActivity : ComponentActivity() {
                                                             newNote
                                                         )
                                                         saveNotes(file, notes)
-                                                    }
+                                                    }.padding(16.dp), contentAlignment = Alignment.Center
                                             ) {
                                                 Text(text = "+ New Note", color = primaryTextColor)
                                             }
