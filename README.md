@@ -23,10 +23,9 @@ The UI is sleek and focuses on a distraction-free writing experience with a mode
 
 The UI has been updated to seamlessly manage your list of notes while keeping the clean and simple feel you love.
 
-| Note List View                               | Editor View                                                                                                            |
-| :-------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------: |
-| *[New screenshot showing the list of notes]* | <img src="https://github.com/user-attachments/assets/c8fa6854-1008-4639-b475-61c0eedd881b" alt="Memory Notes Editor" width="400"/> |
-
+| Note List View | Editor View |
+| :---: | :---: |
+| <img src="https://github.com/user-attachments/assets/c8fa6854-1008-4639-b475-61c0eedd881b" alt="Memory Notes List View" width="400"/> | <img src="https://github.com/user-attachments/assets/caab4e5d-35bd-4c8e-93ef-165bf2f0ae30" alt="Memory Notes Editor View" width="400"/> |
 ---
 
 ## 🛠️ Tech Stack
