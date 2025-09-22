@@ -24,7 +24,7 @@ Here is a preview of the application's interface.
 
 | Modern Teal Theme |
 | :---: |
-| <img src="https://github.com/user-attachments/assets/0e55d677-4a1b-48b8-9970-808c7a4f5e82" alt="Memory Notes App Screenshot" width="400"/> |
+| <img src="https://github.com/user-attachments/assets/c8fa6854-1008-4639-b475-61c0eedd881b" alt="Memory Notes App Screenshot" width="400"/> |
 
 ---
 
