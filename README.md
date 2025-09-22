@@ -49,7 +49,7 @@ You need **Android Studio** (latest stable version recommended) to build and run
 
 1.  **Clone the repository:**
     ```sh
-    git clone [https://github.com/yash-144/MemoryNotes.git](https://github.com/yash-144/MemoryNotes.git)
+    git clone https://github.com/yash-144/MemoryNotes.git
     ```
 2.  **Open in Android Studio:**
     * Open Android Studio.
