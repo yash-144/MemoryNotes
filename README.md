@@ -1,6 +1,6 @@
 # 📝 Memory Notes
 
-A simple, modern, and single-note application for Android built entirely with **Kotlin** and **Jetpack Compose**. It's designed as a quick digital scratchpad to jot down thoughts, ideas, or reminders that persist locally on your device.
+A simple, modern note-taking application for Android built entirely with **Kotlin** and **Jetpack Compose**. It has evolved from a single digital scratchpad into a full notebook in your pocket, allowing you to capture, organize, and revisit all your ideas.
 
 The UI is sleek and focuses on a distraction-free writing experience with a modern dark-teal theme.
 
@@ -8,23 +8,24 @@ The UI is sleek and focuses on a distraction-free writing experience with a mode
 
 ## ✨ Features
 
-* **Single Note Interface:** A straightforward, single-screen UI to write and edit your note.
-* **Local Persistence:** Your note is automatically saved to the device's internal storage, so you never lose your thoughts.
-* **Manual Save & Clear:** Explicit buttons to **Save** your changes or **Clear** the entire note with a confirmation dialog.
+* **Multi-Note Management:** Go beyond a single scratchpad. You can now create, title, and manage as many notes as you need.
+* **Organize with Titles:** Give each note a unique title to keep your thoughts organized and find what you're looking for at a glance.
+* **Local Persistence:** All your notes are saved securely to your device's internal storage, so you never lose your thoughts.
+* **Manual Save & Clear:** Explicit buttons to **Save** your changes or **Clear** an entire note with a confirmation dialog.
 * **Live Feedback:**
-    * Real-time **character count**.
+    * Real-time **character count** for each note.
     * A visual indicator to show if you have **unsaved changes**.
-* **Modern UI:** Built with Jetpack Compose, featuring a clean layout and smooth animations.
+* **Refreshed Modern UI:** Built with Jetpack Compose, featuring a clean, multi-note layout and smooth animations.
 
 ---
 
-## 📸 Screenshot
+## 📸 Screenshots
 
-Here is a preview of the application's interface.
+The UI has been updated to seamlessly manage your list of notes while keeping the clean and simple feel you love.
 
-| Modern Teal Theme |
-| :---: |
-| <img src="https://github.com/user-attachments/assets/c8fa6854-1008-4639-b475-61c0eedd881b" alt="Memory Notes App Screenshot" width="400"/> |
+| Note List View                               | Editor View                                                                                                            |
+| :-------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------: |
+| *[New screenshot showing the list of notes]* | <img src="https://github.com/user-attachments/assets/c8fa6854-1008-4639-b475-61c0eedd881b" alt="Memory Notes Editor" width="400"/> |
 
 ---
 
@@ -64,5 +65,3 @@ You need **Android Studio** (latest stable version recommended) to build and run
 ## 📄 License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
-
----
