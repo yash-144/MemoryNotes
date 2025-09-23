@@ -136,7 +136,7 @@ class MainActivity : ComponentActivity() {
                             containerColor = primaryActionColor,
                             contentColor = darkBlue
                         ),
-                        enabled = unSavedChanges && textState.value.isNotBlank()
+                        enabled = unSavedChanges
                     ) {
                         Text(
                             "Save",
